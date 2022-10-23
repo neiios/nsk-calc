@@ -4,7 +4,7 @@
 }
 
 :root {
-  --calc-backround-color: rgb(8, 8, 8);
+  --calc-background-color: rgb(8, 8, 8);
   --number-background: rgb(36, 36, 36);
   --accent-color: rgb(192, 120, 12);
   --alternative-background: rgb(190, 190, 190);
@@ -34,7 +34,7 @@ body {
 }
 
 .main-grid {
-  background-color: var(--calc-backround-color);
+  background-color: var(--calc-background-color);
   margin: auto;
   max-width: 80rem;
 
@@ -66,6 +66,16 @@ body {
   border-radius: var(--bigger-unit);
   text-align: center;
   padding: var(--unit);
+}
+
+.calc-button:hover {
+  transition: 0.3s;
+  filter: brightness(70%);
+}
+
+.calc-button:active {
+  transition: 0.1s;
+  filter: brightness(130%);
 }
 
 .number-button {
