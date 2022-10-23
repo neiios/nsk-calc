@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+  --calc-backround-color: rgb(8, 8, 8);
+  --number-background: rgb(36, 36, 36);
+  --accent-color: rgb(192, 120, 12);
+  --alternative-background: rgb(190, 190, 190);
+
+  --light-text: rgb(236, 236, 236);
+  --grey-text: rgb(88, 88, 88);
+  --dark-text: rgb(8, 8, 8);
+
+  --small-unit: 1rem;
+  --unit: 2rem;
+  --bigger-unit: 4rem;
+}
+
+body {
+  margin: var(--small-unit);
+  padding: 0;
+  /* TODO: change it */
+  background-color: #2b2a33;
+}
+
+.grid-col-span-2 {
+  grid-column: span 2;
+}
+
+.grid-col-span-all {
+  grid-column: 1 / -1;
+}
+
+.main-grid {
+  background-color: var(--calc-backround-color);
+  margin: auto;
+  max-width: 80rem;
+
+  border-radius: var(--bigger-unit);
+  padding: var(--unit);
+  gap: var(--unit);
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.screen {
+  color: var(--light-text);
+  font-size: var(--bigger-unit);
+  text-align: end;
+  padding: var(--unit);
+}
+
+.second-screen {
+  color: var(--grey-text);
+  font-size: var(--unit);
+  text-align: end;
+  vertical-align: middle;
+  grid-column: span 2;
+}
+
+.calc-button {
+  font-size: var(--unit);
+  border-radius: var(--bigger-unit);
+  text-align: center;
+  padding: var(--unit);
+}
+
+.number-button {
+  background-color: var(--number-background);
+  color: var(--light-text);
+}
+
+.special-button {
+  background-color: var(--alternative-background);
+  color: var(--dark-text);
+}
+
+.action-button {
+  background-color: var(--accent-color);
+  color: var(--light-text);
+}
+
+@media (max-width: 48rem) {
+  :root {
+    --small-unit: 0.5rem;
+    --unit: 1rem;
+    --bigger-unit: 2rem;
+  }
+
+  .main-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .second-screen {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .actions-first-set {
+    grid-row: 8;
+  }
+
+  .actions-second-set {
+    grid-row: 9;
+  }
+
+  .equals {
+    grid-column: span 3;
+  }
+}
