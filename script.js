@@ -5,10 +5,16 @@ let screen2 = document.querySelector(".second-screen");
 screen1.innerText = 0;
 screen2.innerText = 0;
 
+function invalidInputCheck(tag) {
+  return (
+    tag.innerText === "0" ||
+    Number(tag.innerText) === Infinity ||
+    isNaN(Number(tag.innerText))
+  );
+}
+
 function addNumber(number) {
-  screen1.innerText === "0" ||
-  Number(screen1.innerText) === Infinity ||
-  isNaN(Number(screen1.innerText))
+  invalidInputCheck(screen1)
     ? (screen1.innerText = number)
     : (screen1.innerText += number);
   window?.navigator?.vibrate?.(50);
@@ -17,7 +23,7 @@ function addNumber(number) {
 function moveToSecondScreen(el) {
   el.classList.toggle("action-button-pressed");
   // in case screen1.innerText is not a number
-  if (isNaN(Number(screen1.innerText))) screen1.innerText = 0;
+  if (invalidInputCheck(screen1)) screen1.innerText = 0;
   screen2.innerText = Number(screen1.innerText);
   screen1.innerText = 0;
 }
@@ -29,6 +35,9 @@ function selectOperation(el, op) {
   [...document.querySelectorAll(".action-button-pressed")].map((el) => {
     el.classList.remove("action-button-pressed");
   });
+
+  // in case screen1.innerText is not a number
+  if (invalidInputCheck(screen1)) screen1.innerText = 0;
 
   switch (op) {
     case "add":
