@@ -8,6 +8,7 @@ screen2.innerText = 0;
 function addNumber(number) {
   screen.innerText === "0" ||
   screen.innerText === "Infinity" ||
+  screen.innerText === "NaN" ||
   Number(screen.innerText) === NaN
     ? (screen.innerText = number)
     : (screen.innerText += number);
