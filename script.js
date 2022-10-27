@@ -1,26 +1,25 @@
 let operation = "";
-let screen = document.querySelector(".screen");
+let screen1 = document.querySelector(".screen");
 let screen2 = document.querySelector(".second-screen");
 
-screen.innerText = 0;
+screen1.innerText = 0;
 screen2.innerText = 0;
 
 function addNumber(number) {
-  screen.innerText === "0" ||
-  screen.innerText === "Infinity" ||
-  screen.innerText === "NaN" ||
-  Number(screen.innerText) === NaN
-    ? (screen.innerText = number)
-    : (screen.innerText += number);
+  screen1.innerText === "0" ||
+  Number(screen1.innerText) === Infinity ||
+  isNaN(Number(screen1.innerText))
+    ? (screen1.innerText = number)
+    : (screen1.innerText += number);
   window?.navigator?.vibrate?.(50);
 }
 
 function moveToSecondScreen(el) {
   el.classList.toggle("action-button-pressed");
-  // in case screen.innerText is not a number
-  if (isNaN(Number(screen.innerText))) screen.innerText = 0;
-  screen2.innerText = Number(screen.innerText);
-  screen.innerText = 0;
+  // in case screen1.innerText is not a number
+  if (isNaN(Number(screen1.innerText))) screen1.innerText = 0;
+  screen2.innerText = Number(screen1.innerText);
+  screen1.innerText = 0;
 }
 
 function selectOperation(el, op) {
@@ -52,12 +51,12 @@ function selectOperation(el, op) {
       completeOperation();
       break;
     case "clear":
-      screen.innerText = 0;
+      screen1.innerText = 0;
       screen2.innerText = 0;
       operation = "";
       break;
     case "sign":
-      screen.innerText = Number(screen.innerText) * -1;
+      screen1.innerText = Number(screen1.innerText) * -1;
       break;
     case "help":
       // help modal
@@ -68,16 +67,16 @@ function selectOperation(el, op) {
       break;
     case "sqrt":
       // check if the number is less than zero
-      if (Number(screen.innerText) < 0) {
-        screen.innerText = "Kvadratinė šaknis iš neigiamo skaičiaus.";
+      if (Number(screen1.innerText) < 0) {
+        screen1.innerText = "Kvadratinė šaknis iš neigiamo skaičiaus.";
       } else {
-        screen.innerText = Math.sqrt(Number(screen.innerText));
+        screen1.innerText = Math.sqrt(Number(screen1.innerText));
       }
       break;
     case "dot":
       // check if the number already includes a dot
-      if (!screen.innerText.includes(".")) {
-        screen.innerText += ".";
+      if (!screen1.innerText.includes(".")) {
+        screen1.innerText += ".";
       }
       break;
     default:
@@ -90,36 +89,36 @@ function completeOperation() {
   // add some haptic feedback
   window?.navigator?.vibrate?.(50);
 
-  let firstValue = Number(screen.innerText);
+  let firstValue = Number(screen1.innerText);
   let secondValue = Number(screen2.innerText);
   switch (operation) {
     case "add":
-      screen.innerText = secondValue + firstValue;
+      screen1.innerText = secondValue + firstValue;
       screen2.innerText = 0;
       operation = "";
       break;
     case "sub":
-      screen.innerText = secondValue - firstValue;
+      screen1.innerText = secondValue - firstValue;
       screen2.innerText = 0;
       operation = "";
       break;
     case "mult":
-      screen.innerText = secondValue * firstValue;
+      screen1.innerText = secondValue * firstValue;
       screen2.innerText = 0;
       operation = "";
       break;
     case "div":
       // check the division by zero
-      if (Number(screen.innerText) === 0) {
-        screen.innerText = "Dalyba iš nulio.";
+      if (Number(screen1.innerText) === 0) {
+        screen1.innerText = "Dalyba iš nulio.";
       } else {
-        screen.innerText = secondValue / firstValue;
+        screen1.innerText = secondValue / firstValue;
       }
       screen2.innerText = 0;
       operation = "";
       break;
     case "pow":
-      screen.innerText = Math.pow(secondValue, firstValue);
+      screen1.innerText = Math.pow(secondValue, firstValue);
       screen2.innerText = 0;
       operation = "";
       break;
