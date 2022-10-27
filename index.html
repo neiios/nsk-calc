@@ -12,28 +12,88 @@
   <body>
     <div class="main-grid">
       <div class="screen grid-col-span-all">1337</div>
-      <div class="calc-button special-button">C</div>
-      <div class="calc-button special-button">±</div>
-      <div class="calc-button special-button">?</div>
+      <div
+        class="calc-button special-button"
+        onclick="selectOperation(this,'clear')"
+      >
+        AC
+      </div>
+      <div
+        class="calc-button special-button"
+        onclick="selectOperation(this,'sign')"
+      >
+        ±
+      </div>
+      <div
+        class="calc-button special-button"
+        onclick="selectOperation(this,'help')"
+      >
+        ?
+      </div>
       <div class="second-screen">228</div>
-      <div class="calc-button number-button">7</div>
-      <div class="calc-button number-button">8</div>
-      <div class="calc-button number-button">9</div>
-      <div class="calc-button action-button actions-first-set">÷</div>
-      <div class="calc-button action-button actions-first-set">×</div>
-      <div class="calc-button number-button">4</div>
-      <div class="calc-button number-button">5</div>
-      <div class="calc-button number-button">6</div>
-      <div class="calc-button action-button actions-first-set">-</div>
-      <div class="calc-button action-button actions-second-set">+</div>
-      <div class="calc-button number-button">1</div>
-      <div class="calc-button number-button">2</div>
-      <div class="calc-button number-button">3</div>
-      <div class="calc-button action-button actions-second-set">x^y</div>
-      <div class="calc-button action-button actions-second-set">√</div>
-      <div class="calc-button number-button grid-col-span-2">0</div>
-      <div class="calc-button number-button">,</div>
-      <div class="calc-button action-button grid-col-span-2 equals">=</div>
+      <div class="calc-button number-button" onclick="addNumber(7)">7</div>
+      <div class="calc-button number-button" onclick="addNumber(8)">8</div>
+      <div class="calc-button number-button" onclick="addNumber(9)">9</div>
+      <div
+        class="calc-button action-button actions-first-set"
+        onclick="selectOperation(this,'div')"
+      >
+        ÷
+      </div>
+      <div
+        class="calc-button action-button actions-first-set"
+        onclick="selectOperation(this,'mult')"
+      >
+        ×
+      </div>
+      <div class="calc-button number-button" onclick="addNumber(4)">4</div>
+      <div class="calc-button number-button" onclick="addNumber(5)">5</div>
+      <div class="calc-button number-button" onclick="addNumber(6)">6</div>
+      <div
+        class="calc-button action-button actions-first-set"
+        onclick="selectOperation(this,'sub')"
+      >
+        -
+      </div>
+      <div
+        class="calc-button action-button actions-second-set"
+        onclick="selectOperation(this,'add')"
+      >
+        +
+      </div>
+      <div class="calc-button number-button" onclick="addNumber(1)">1</div>
+      <div class="calc-button number-button" onclick="addNumber(2)">2</div>
+      <div class="calc-button number-button" onclick="addNumber(3)">3</div>
+      <div
+        class="calc-button action-button actions-second-set"
+        onclick="selectOperation(this,'pow')"
+      >
+        x^y
+      </div>
+      <div
+        class="calc-button action-button actions-second-set"
+        onclick="selectOperation(this,'sqrt')"
+      >
+        √
+      </div>
+      <div
+        class="calc-button number-button grid-col-span-2"
+        onclick="addNumber(0)"
+      >
+        0
+      </div>
+      <div
+        class="calc-button number-button"
+        onclick="selectOperation(this,'dot')"
+      >
+        .
+      </div>
+      <div
+        class="calc-button action-button grid-col-span-2 equals"
+        onclick="selectOperation(this,'eq')"
+      >
+        =
+      </div>
     </div>
   </body>
 </html>

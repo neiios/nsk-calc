@@ -80,6 +80,11 @@ body {
   filter: brightness(130%);
 }
 
+.action-button-pressed {
+  transition: 0.1s;
+  filter: brightness(130%);
+}
+
 .number-button {
   background-color: var(--number-background);
   color: var(--light-text);
