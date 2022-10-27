@@ -49,6 +49,7 @@ body {
 .screen {
   color: var(--light-text);
   font-size: var(--bigger-unit);
+  overflow: auto;
   text-align: end;
   padding: var(--unit);
 }
@@ -57,6 +58,7 @@ body {
   color: var(--grey-text);
   font-size: var(--unit);
   text-align: end;
+  overflow: auto;
   vertical-align: middle;
   grid-column: span 2;
 }
