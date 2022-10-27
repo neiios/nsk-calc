@@ -102,9 +102,9 @@ body {
 
 @media (max-width: 48rem) {
   :root {
-    --small-unit: 0.5rem;
-    --unit: 1rem;
-    --bigger-unit: 2rem;
+    --small-unit: 1rem;
+    --unit: 1.5rem;
+    --bigger-unit: 3rem;
   }
 
   .main-grid {
@@ -126,5 +126,13 @@ body {
 
   .equals {
     grid-column: span 3;
+  }
+}
+
+@media (max-width: 26rem) {
+  :root {
+    --small-unit: 0.5rem;
+    --unit: 1rem;
+    --bigger-unit: 2rem;
   }
 }
