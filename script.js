@@ -12,6 +12,7 @@ function addNumber(number) {
   Number(screen.innerText) === NaN
     ? (screen.innerText = number)
     : (screen.innerText += number);
+  window?.navigator?.vibrate?.(50);
 }
 
 function moveToSecondScreen(el) {
