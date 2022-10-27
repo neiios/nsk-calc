@@ -24,12 +24,7 @@
       >
         ±
       </div>
-      <div
-        class="calc-button special-button"
-        onclick="selectOperation(this,'help')"
-      >
-        ?
-      </div>
+      <div class="calc-button special-button" data-modal="modal-one">?</div>
       <div class="second-screen">1337</div>
       <div class="calc-button number-button" onclick="addNumber(7)">7</div>
       <div class="calc-button number-button" onclick="addNumber(8)">8</div>
@@ -93,6 +88,26 @@
         onclick="selectOperation(this,'eq')"
       >
         =
+      </div>
+    </div>
+
+    <div class="modal" id="modal-one">
+      <div class="modal-bg modal-exit"></div>
+      <div class="modal-container">
+        <h1>Funkcijų aprašymas:</h1>
+        <ul>
+          <li>AC - išvalyti įvestį</li>
+          <li>± - pakeisti numerio ženklą</li>
+          <li>? - atidaryti funkcijų aprašymą</li>
+          <li>÷ - dalybos operacija</li>
+          <li>× - daugybos operacija</li>
+          <li>- - atimties operacija</li>
+          <li>+ - sudėties operacija</li>
+          <li>x^y - kėlimas laipsniu</li>
+          <li>√ - kvadratinė šaknis</li>
+          <li>= - atlikti skaičiavimą</li>
+        </ul>
+        <button class="modal-close modal-exit">X</button>
       </div>
     </div>
   </body>
