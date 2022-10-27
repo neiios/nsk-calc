@@ -22,6 +22,9 @@ function moveToSecondScreen(el) {
 }
 
 function selectOperation(el, op) {
+  // add some haptic feedback
+  window?.navigator?.vibrate?.(50);
+
   [...document.querySelectorAll(".action-button-pressed")].map((el) => {
     el.classList.remove("action-button-pressed");
   });
@@ -82,6 +85,9 @@ function selectOperation(el, op) {
 }
 
 function completeOperation() {
+  // add some haptic feedback
+  window?.navigator?.vibrate?.(50);
+
   let firstValue = Number(screen.innerText);
   let secondValue = Number(screen2.innerText);
   switch (operation) {
