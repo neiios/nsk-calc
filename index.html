@@ -10,86 +10,159 @@
   </head>
 
   <body>
-    <div class="main-grid">
-      <div class="screen grid-col-span-all">1337</div>
-      <div
+    <section class="main-grid">
+      <div class="screen grid-col-span-all" aria-label="Pagrindinis ekranas">
+        1337
+      </div>
+      <button
         class="calc-button special-button"
         onclick="selectOperation(this,'clear')"
+        aria-label="Išvalyti įvestį"
       >
         AC
-      </div>
-      <div
+      </button>
+      <button
         class="calc-button special-button"
         onclick="selectOperation(this,'sign')"
+        aria-label="Pakeisti ženklą"
       >
         ±
-      </div>
-      <div class="calc-button special-button" data-modal="modal-one">?</div>
-      <div class="second-screen">1337</div>
-      <div class="calc-button number-button" onclick="addNumber(7)">7</div>
-      <div class="calc-button number-button" onclick="addNumber(8)">8</div>
-      <div class="calc-button number-button" onclick="addNumber(9)">9</div>
-      <div
+      </button>
+      <button
+        class="calc-button special-button"
+        data-modal="modal-one"
+        aria-label="Funkcijų aprašymas"
+      >
+        ?
+      </button>
+      <div class="second-screen" aria-label="Pagalbinis ekranas">1337</div>
+      <button
+        class="calc-button number-button"
+        onclick="addNumber(7)"
+        aria-label="Septyni"
+      >
+        7
+      </button>
+      <button
+        class="calc-button number-button"
+        onclick="addNumber(8)"
+        aria-label="Aštuoni"
+      >
+        8
+      </button>
+      <button
+        class="calc-button number-button"
+        onclick="addNumber(9)"
+        aria-label="Devyni"
+      >
+        9
+      </button>
+      <button
         class="calc-button action-button actions-first-set"
+        aria-label="Dalybos operacija"
         onclick="selectOperation(this,'div')"
       >
         ÷
-      </div>
-      <div
+      </button>
+      <button
         class="calc-button action-button actions-first-set"
+        aria-label="Daugybos operacija"
         onclick="selectOperation(this,'mult')"
       >
         ×
-      </div>
-      <div class="calc-button number-button" onclick="addNumber(4)">4</div>
-      <div class="calc-button number-button" onclick="addNumber(5)">5</div>
-      <div class="calc-button number-button" onclick="addNumber(6)">6</div>
-      <div
+      </button>
+      <button
+        class="calc-button number-button"
+        onclick="addNumber(4)"
+        aria-label="Keturi"
+      >
+        4
+      </button>
+      <button
+        class="calc-button number-button"
+        onclick="addNumber(5)"
+        aria-label="Penki"
+      >
+        5
+      </button>
+      <button
+        class="calc-button number-button"
+        onclick="addNumber(6)"
+        aria-label="Šeši"
+      >
+        6
+      </button>
+      <button
         class="calc-button action-button actions-first-set"
         onclick="selectOperation(this,'sub')"
+        aria-label="Atimties operacija"
       >
         -
-      </div>
-      <div
+      </button>
+      <button
         class="calc-button action-button actions-second-set"
         onclick="selectOperation(this,'add')"
+        aria-label="Sudėties operacija"
       >
         +
-      </div>
-      <div class="calc-button number-button" onclick="addNumber(1)">1</div>
-      <div class="calc-button number-button" onclick="addNumber(2)">2</div>
-      <div class="calc-button number-button" onclick="addNumber(3)">3</div>
-      <div
+      </button>
+      <button
+        class="calc-button number-button"
+        onclick="addNumber(1)"
+        aria-label="Vienas"
+      >
+        1
+      </button>
+      <button
+        class="calc-button number-button"
+        onclick="addNumber(2)"
+        aria-label="Du"
+      >
+        2
+      </button>
+      <button
+        class="calc-button number-button"
+        onclick="addNumber(3)"
+        aria-label="Trys"
+      >
+        3
+      </button>
+      <button
         class="calc-button action-button actions-second-set"
         onclick="selectOperation(this,'pow')"
+        aria-label="Kėlimas laipsniu"
       >
         x^y
-      </div>
-      <div
+      </button>
+      <button
         class="calc-button action-button actions-second-set"
         onclick="selectOperation(this,'sqrt')"
+        aria-label="Kvadratinė šaknis"
       >
         √
-      </div>
-      <div
+      </button>
+      <button
         class="calc-button number-button grid-col-span-2"
         onclick="addNumber(0)"
+        aria-label="Nulis"
       >
         0
-      </div>
-      <div
+      </button>
+      <button
         class="calc-button number-button"
         onclick="selectOperation(this,'dot')"
+        aria-label="Taškas"
       >
         .
-      </div>
-      <div
+      </button>
+      <button
         class="calc-button action-button grid-col-span-2 equals"
         onclick="selectOperation(this,'eq')"
+        aria-label="Atlikti skaičiavimą"
       >
         =
-      </div>
-    </div>
+      </button>
+    </section>
 
     <div class="modal" id="modal-one">
       <div class="modal-bg modal-exit"></div>
@@ -107,7 +180,7 @@
           <li>√ - kvadratinė šaknis</li>
           <li>= - atlikti skaičiavimą</li>
         </ul>
-        <button class="modal-close modal-exit">X</button>
+        <div class="modal-close modal-exit">X</div>
       </div>
     </div>
   </body>
